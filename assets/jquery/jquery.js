@@ -4755,7 +4755,7 @@
 
       while (maxIterations--) {
         // Evaluate and update our best guess (doubling guesses that zero out).
-        // Finish if the scale equals or crosses 1 (making the old*new Book non-positive).
+        // Finish if the scale equals or crosses 1 (making the old*new book non-positive).
         jQuery.style(elem, prop, initialInUnit + unit);
         if (
           (1 - scale) * (1 - (scale = currentValue() / initial || 0.5)) <=
