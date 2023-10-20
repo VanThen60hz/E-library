@@ -58,7 +58,8 @@
                       type="text"
                       class="form-control validate"
                       id="name"
-                      pattern="^[a-zA-z]$"
+                      pattern="^[a-zA-z]+$"
+                      title="Your name should contain only character"
                       value=""
                       required
                     />
@@ -70,6 +71,8 @@
                       type="text"
                       class="form-control validate"
                       id="username"
+                      pattern=".{6,}"
+                      title="Please enter your username at least 6 words"
                       value=""
                       required
                     />
@@ -81,6 +84,8 @@
                       type="password"
                       class="form-control validate"
                       id="password"
+                      pattern=".{8,}"
+                      title="Your password is too weak,please enter at least 8 characters"
                       value=""
                       required
                     />
@@ -90,6 +95,7 @@
                     <input
                       name="email"
                       type="email"
+                      pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
                       class="form-control validate"
                       id="email"
                       value=""
@@ -104,7 +110,7 @@
                       class="form-control validate"
                       id="phone"
                       value=""
-                      pattern="^[1-9]*$"
+                      pattern="^[0-9]+$"
                       required
                     />
                   </div>
