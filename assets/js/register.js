@@ -23,7 +23,7 @@ function register() {
     password,
     email,
     phone,
-    birthday: birthday,
+    birthday,
     gender,
   };
 
@@ -44,6 +44,15 @@ function register() {
           throw new Error("Network response was not ok");
         });
       }
+
+      // Remove old css class
+      const messageElement = document.getElementById("message");
+      messageElement.classList.remove("text-danger");
+
+      // Set notification with green color
+      messageElement.textContent = username + " registered successfully!";
+      messageElement.classList.add("text-success");
+
       return response.json();
     })
     .then((data) => {
