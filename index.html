@@ -77,11 +77,15 @@
                 <a class="nav-link" href="pages/contact.html">Contact Us</a>
               </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto" style="margin: auto 0">
               <li class="nav-item">
-                <a class="nav-link d-block" href="/pages/login.html">
-                  User1, <b>Logout</b>
-                </a>
+                <button
+                  class="btn btn-dark"
+                  style="background: none; border: none"
+                  onclick="logout()"
+                >
+                  User, <b>Logout</b>
+                </button>
               </li>
             </ul>
           </div>
@@ -340,6 +344,9 @@
         </div>
       </div>
     </footer>
+    <script src="/assets/js/logout.js"></script>
+
+    <script src="/assets/js/userCheck.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

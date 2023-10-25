@@ -40,13 +40,14 @@ function register() {
       if (!response.ok) {
         return response.json().then((errorData) => {
           // Set the error message in the "message" element
-          document.getElementById("message").textContent = errorData.message;
+          document.getElementById("register-message").textContent =
+            errorData.message;
           throw new Error("Network response was not ok");
         });
       }
 
       // Remove old css class
-      const messageElement = document.getElementById("message");
+      const messageElement = document.getElementById("register-message");
       messageElement.classList.remove("text-danger");
 
       // Set notification with green color
