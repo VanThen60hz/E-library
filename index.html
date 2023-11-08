@@ -1,146 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>E-Library</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.css">
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-  </head>
+  <title>E-Library</title>
 
-  <body>
-    <!-- ***** Preloader Start ***** -->
-    <!-- <div id="preloader">
-      <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div> -->
-    <!-- ***** Preloader End ***** -->
-    <!-- Thịnh đẹp trai -->
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-    <!-- Header -->
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/preload.css">
 
-    <!--ninh đẹp trai  -->
-    <!-- iajsdlkj.fpasd -->
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/templatemo-sixteen.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+</head>
 
-    <header class="">
-      <!-- ninh dep trai -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"
-            ><h2>E-<em>Lib</em></h2></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html"
-                  >Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">E-LIB</p>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Header -->
+  <header data-header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          <h2>E-<em>Lib</em></h2>
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <a href="#" class="logo">
+            <h2>E-<em>Lib</em></h2>
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+
+                <span class="span">Home</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="pages/book-list.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">Our books</span>
+              </a>
+            </li>
+
+
+            <li class="navbar-item">
+              <a href="pages/about.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">About Us</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="pages/contact.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">Contact us</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Address</p>
+
+            <address class="body-4">
+              254 Nguyễn Văn Linh <br>
+              Đà Nẵng, Việt Nam
+            </address>
+
+            <p class="body-4 navbar-text">Open: 7:30 am - 5.30pm</p>
+
+            <a href="mailto:booking@grilli.com" class="body-4 sidebar-link">library@duytan.edu.com <br>
+              thuvienduytan@gmail.com
+            </a>
+
+            <div class="separator"></div>
+
+            <p class="contact-label">Phone number</p>
+
+            <a href="tel:+88123123456" class="body-1 contact-number hover-underline">
+              +0236-3650-403(105)
+            </a>
+          </div>
+        </nav>
+
+        <button class="nav-open-btn js-nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link hover-underline active" href="index.html">
+                <span class="span">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-underline" href="pages/book-list.html">
+                <span class="span">Our books</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-underline" href="pages/about.html">
+                <span class="span">About us</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-underline" href="pages/contact.html">
+                <span class="span">Contact us</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto" style="margin: auto 0">
+            <div class="search-box">
+              <div class="search-bar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"
+                  aria-labelledby="IconBase-title-16ad8154-a25d-484c-b7a5-af3302e957ad IconBase-description-16ad8154-a25d-484c-b7a5-af3302e957ad"
+                  role="graphics-symbol img" width="100%" height="100%" class="SearchTypeahead-icon" aria-hidden="true">
+                  <title id="IconBase-title-16ad8154-a25d-484c-b7a5-af3302e957ad">search</title>
+                  <desc id="IconBase-description-16ad8154-a25d-484c-b7a5-af3302e957ad">magnifying glass</desc>
+                  <g>
+                    <path
+                      d="M11.407,10.421,8.818,7.832a4.276,4.276,0,1,0-.985.985l2.589,2.589a.7.7,0,0,0,.985-.985ZM2.355,5.352a3,3,0,1,1,3,3,3,3,0,0,1-3-3Z">
+                    </path>
+                  </g>
+                </svg>
+                <input type="text" name="input-box" placeholder="Search...">
+              </div>
+            </div>
+            <div class="btn-logout">
               <li class="nav-item">
-                <a class="nav-link" href="pages/book-list.html">Our books</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/contact.html">Contact Us</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ml-auto" style="margin: auto 0">
-              <li class="nav-item">
-                <button
-                  class="btn btn-dark"
-                  style="background: none; border: none"
-                  onclick="logout()"
-                >
-                  User, <b>Logout</b>
+                <button class="btn btn-dark" style="background: none; border: none" onclick="logout()">
+                  <b>Log out</b>
                 </button>
               </li>
-            </ul>
-          </div>
+            </div>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-          <div class="text-content">
-            <h4>Best Offer</h4>
-            <h2>New Arrivals On Sale</h2>
-          </div>
+  <!-- Page Content -->
+  <!-- Banner Starts Here -->
+  <div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+      <div class="banner-item-01">
+        <div class="text-content">
+          <h4>Best Offer</h4>
+          <h2>New Arrivals On Sale</h2>
         </div>
-        <div class="banner-item-02">
-          <div class="text-content">
-            <h4>Flash Deals</h4>
-            <h2>Get your best books</h2>
-          </div>
+      </div>
+      <div class="banner-item-02">
+        <div class="text-content">
+          <h4>Flash Deals</h4>
+          <h2>Get your best books</h2>
         </div>
-        <div class="banner-item-03">
-          <div class="text-content">
-            <h4>Last Minute</h4>
-            <h2>Grab last minute deals</h2>
-          </div>
+      </div>
+      <div class="banner-item-03">
+        <div class="text-content">
+          <h4>Last Minute</h4>
+          <h2>Grab last minute deals</h2>
         </div>
       </div>
     </div>
-    <!-- Banner Ends Here -->
+  </div>
+  <!-- Banner Ends Here -->
 
-    <div class="latest-books">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
+  <!-- Latest Book -->
+  <div class="latest-books top-80">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="category">
+              <i class='bx bx-book'></i>
               <h2>Latest books</h2>
-              <a href="books.html"
-                >view all books <i class="fa fa-angle-right"></i
-              ></a>
             </div>
+            <a href="books.html">
+              view all
+              <i class="fa fa-angle-right"></i>
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_01.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$25.75</h6>
-                <p>
-                  Lorem ipsume dolor sit amet, adipisicing elite. Itaque,
-                  corporis nulla aspernatur.
-                </p>
-                <ul class="stars">
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" srcset="https://psiec.in/wp-content/uploads/2023/04/Cay-Cam-NgoT-Cua-Toi-PDF.jpg"
+                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>Cây cam ngọt của tôi</h4>
+              </a>
+              <p class="book-auther">
+                José Mauro de Vasconcelos
+              </p>
+              <div class="star">
+                <ul class="stars-reviews">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -151,225 +242,282 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_02.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$30.25</h6>
-                <p>
-                  Lorem ipsume dolor sit amet, adipisicing elite. Itaque,
-                  corporis nulla aspernatur.
-                </p>
-                <ul class="stars">
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" src="https://exploringjs.com/impatient-js/img-homepage/cover-homepage.jpg"
+                  alt="Book cover with rhino">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>JavaScript for impatient programmers</h4>
+              </a>
+              <p class="book-auther">Dr. Axel Rauschmayer</p>
+              <div class="star">
+                <ul class="stars-reviews">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <span>Reviews (21)</span>
+                <span>Reviews (24)</span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_03.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$20.45</h6>
-                <p>E-Library is free CSS template provided by TemplateMo.</p>
-                <ul class="stars">
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img"
+                  srcset="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1530861339i/40730394.jpg"
+                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>3 người thầy vĩ đại</h4>
+              </a>
+              <p class="book-auther">Robin Sharma</p>
+              <div class="star">
+                <ul class="stars-reviews">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <span>Reviews (36)</span>
+                <span>Reviews (24)</span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_04.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$15.25</h6>
-                <p>
-                  Lorem ipsume dolor sit amet, adipisicing elite. Itaque,
-                  corporis nulla aspernatur.
-                </p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (48)</span>
-              </div>
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" src="https://exploringjs.com/tackling-ts/img-homepage/cover-homepage.jpg" alt="Tackling TypeScript:
+                  Upgrading from JavaScript">
+              </a>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_05.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$12.50</h6>
-                <p>
-                  Lorem ipsume dolor sit amet, adipisicing elite. Itaque,
-                  corporis nulla aspernatur.
-                </p>
-                <ul class="stars">
+            <div class="down-content">
+              <a href="#">
+                <h4>Tackling TypeScript:
+                  Upgrading from JavaScript</h4>
+              </a>
+              <p class="book-auther">Dr. Axel Rauschmayer</p>
+              <div class="star">
+                <ul class="stars-reviews">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <span>Reviews (16)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="book-item">
-              <a href="#"><img src="assets/images/product_06.jpg" alt="" /></a>
-              <div class="down-content">
-                <a href="#"><h4>Tittle goes here</h4></a>
-                <h6>$22.50</h6>
-                <p>
-                  Lorem ipsume dolor sit amet, adipisicing elite. Itaque,
-                  corporis nulla aspernatur.
-                </p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (32)</span>
+                <span>Reviews (24)</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="best-features">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>About E-Library</h2>
+  <!-- Best Sellers -->
+  <div class="best-sellers top-80">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="category">
+              <i class='bx bx-book'></i>
+              <h2>Best sellers</h2>
             </div>
+            <a href="books.html">
+              view all
+              <i class="fa fa-angle-right"></i>
+            </a>
           </div>
-          <div class="col-md-6">
-            <div class="left-content">
-              <h4>Looking for the best books?</h4>
-              <p>
-                <a
-                  rel="nofollow"
-                  href="https://templatemo.com/tm-546-sixteen-clothing"
-                  target="_parent"
-                  >This template</a
-                >
-                is free to use for your business websites. However, you have no
-                permission to redistribute the downloadable ZIP file on any
-                template collection website.
-                <a rel="nofollow" href="https://templatemo.com/contact"
-                  >Contact us</a
-                >
-                for more info.
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" srcset="https://psiec.in/wp-content/uploads/2023/04/Cay-Cam-NgoT-Cua-Toi-PDF.jpg"
+                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>Cây cam ngọt của tôi</h4>
+              </a>
+              <p class="book-auther">
+                José Mauro de Vasconcelos
               </p>
-              <ul class="featured-list">
-                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                <li><a href="#">Consectetur an adipisicing elit</a></li>
-                <li><a href="#">It aquecorporis nulla aspernatur</a></li>
-                <li><a href="#">Corporis, omnis doloremque</a></li>
-                <li><a href="#">Non cum id reprehenderit</a></li>
-              </ul>
-              <a href="about.html" class="filled-button">Read More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="right-image">
-              <img src="assets/images/feature-image.jpg" alt="" />
+              <div class="star">
+                <ul class="stars-reviews">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <div class="row">
-                <div class="col-md-8">
-                  <h4>Creative &amp; UniquE-<em>Sixteen</em> books</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Itaque corporis amet elite author nulla.
-                  </p>
-                </div>
-                <div class="col-md-4">
-                  <a href="#" class="filled-button">Purchase Now</a>
-                </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" src="https://exploringjs.com/impatient-js/img-homepage/cover-homepage.jpg"
+                  alt="Book cover with rhino">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>JavaScript for impatient programmers</h4>
+              </a>
+              <p class="book-auther">Dr. Axel Rauschmayer</p>
+              <div class="star">
+                <ul class="stars-reviews">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img"
+                  srcset="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1530861339i/40730394.jpg"
+                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>3 người thầy vĩ đại</h4>
+              </a>
+              <p class="book-auther">Robin Sharma</p>
+              <div class="star">
+                <ul class="stars-reviews">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="book-item hover:card">
+            <div class="book-item-img">
+              <a href="#">
+                <img class="book-img" src="https://exploringjs.com/tackling-ts/img-homepage/cover-homepage.jpg" alt="Tackling TypeScript:
+                  Upgrading from JavaScript">
+              </a>
+            </div>
+            <div class="down-content">
+              <a href="#">
+                <h4>Tackling TypeScript:
+                  Upgrading from JavaScript</h4>
+              </a>
+              <p class="book-auther">Dr. Axel Rauschmayer</p>
+              <div class="star">
+                <ul class="stars-reviews">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p>
-                Copyright &copy; 2020 E-Library Co., Ltd. - Design:
-                <a
-                  rel="nofollow noopener"
-                  href="https://templatemo.com"
-                  target="_blank"
-                  >TemplateMo</a
-                >
-              </p>
-            </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bar">
+        <div class="footer-img">
+          <a class="footer-brand" href="index.html">
+            <h2>E-<em>Lib</em></h2>
+          </a>
+        </div>
+        <div class="footer-items">
+          <a href="#">home</a>
+          <a href="#">out books</a>
+          <a href="#">about us</a>
+          <a href="#">contact us</a>
+        </div>
+        <div class="footer-socials">
+          <p>follow us</p>
+          <div class="socials">
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
           </div>
         </div>
       </div>
-    </footer>
-    <script src="/assets/js/logout.js"></script>
+    </div>
+  </footer>
 
-    <script src="/assets/js/userCheck.js"></script>
+  <!-- #Back to top -->
+  <a href="#top" class="back-to-btn" aria-label="back to top" data-back-to-btn>
+    <i class='bx bx-chevron-up' aria-hidden="true"></i>
+  </a>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/logout.js"></script>
 
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+  <script src="/assets/js/userCheck.js"></script>
 
-    <script language="text/Javascript">
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t) {
-        //declaring the array outside of the
-        if (!cleared[t.id]) {
-          // function makes it static and global
-          cleared[t.id] = 1; // you could use true and false, but that's more typing
-          t.value = ""; // with more chance of typos
-          t.style.color = "#fff";
-        }
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Additional Scripts -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/accordions.js"></script>
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {
+      //declaring the array outside of the
+      if (!cleared[t.id]) {
+        // function makes it static and global
+        cleared[t.id] = 1; // you could use true and false, but that's more typing
+        t.value = ""; // with more chance of typos
+        t.style.color = "#fff";
       }
-    </script>
-  </body>
+    }
+  </script>
+
+  <script src="./assets/js/preload.js"></script>
+  <script src=""></script>
+  <script src="./assets/js/books.js"></script>
+</body>
+
 </html>
