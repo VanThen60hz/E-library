@@ -1,3 +1,5 @@
+// import { BASE_URL } from "./domain";
+
 // Listen for the event when the login button is clicked
 document
   .getElementById("loginButton")
@@ -12,13 +14,15 @@ document
 
 // Function to perform login and check user role
 function loginAndCheckRole(usernameOrEmail, password) {
+  const BASE_URL = "https://mrthinkj.top";
+
   // Login data in JSON format
   const loginData = {
     usernameOrEmail: usernameOrEmail,
     password: password,
   };
 
-  fetch("http://localhost:8080/api/auth/login", {
+  fetch(`${BASE_URL}/api/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
