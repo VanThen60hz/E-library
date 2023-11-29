@@ -29,6 +29,11 @@
   <link rel="stylesheet" href="assets/css/owl.css" />
 </head>
 
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+
+
 <body>
   <!-- ***** Preloader Start ***** -->
   <div class="preload" data-preaload>
@@ -175,7 +180,7 @@
 
   <!-- Page Content -->
   <!-- Banner Starts Here -->
-  <div class="banner header-text">
+  <!-- <div class="banner header-text">
     <div class="owl-banner owl-carousel">
       <div class="banner-item-01">
         <div class="text-content">
@@ -196,10 +201,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Banner Ends Here -->
 
-  <!-- Latest Book -->
+  <!-- List Book -->
   <div class="latest-books top-80">
     <div class="container">
       <div class="row">
@@ -207,248 +212,38 @@
           <div class="section-heading">
             <div class="category">
               <i class='bx bx-book'></i>
-              <h2>Latest books</h2>
+              <h2>All books</h2>
             </div>
-            <a href="books.html">
+            <!-- <a href="books.html">
               view all
               <i class="fa fa-angle-right"></i>
-            </a>
+            </a> -->
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" srcset="https://psiec.in/wp-content/uploads/2023/04/Cay-Cam-NgoT-Cua-Toi-PDF.jpg"
-                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>Cây cam ngọt của tôi</h4>
-              </a>
-              <p class="book-auther">
-                José Mauro de Vasconcelos
-              </p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
+        <div class="row">
+          <div id="titleProduct" class="products">
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" src="https://exploringjs.com/impatient-js/img-homepage/cover-homepage.jpg"
-                  alt="Book cover with rhino">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>JavaScript for impatient programmers</h4>
-              </a>
-              <p class="book-auther">Dr. Axel Rauschmayer</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img"
-                  srcset="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1530861339i/40730394.jpg"
-                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>3 người thầy vĩ đại</h4>
-              </a>
-              <p class="book-auther">Robin Sharma</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" src="https://exploringjs.com/tackling-ts/img-homepage/cover-homepage.jpg" alt="Tackling TypeScript:
-                  Upgrading from JavaScript">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>Tackling TypeScript:
-                  Upgrading from JavaScript</h4>
-              </a>
-              <p class="book-auther">Dr. Axel Rauschmayer</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Best Sellers -->
-  <div class="best-sellers top-80">
-    <div class="container">
-      <div class="row">
         <div class="col-md-12">
-          <div class="section-heading">
-            <div class="category">
-              <i class='bx bx-book'></i>
-              <h2>Best sellers</h2>
-            </div>
-            <a href="books.html">
-              view all
-              <i class="fa fa-angle-right"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" srcset="https://psiec.in/wp-content/uploads/2023/04/Cay-Cam-NgoT-Cua-Toi-PDF.jpg"
-                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>Cây cam ngọt của tôi</h4>
-              </a>
-              <p class="book-auther">
-                José Mauro de Vasconcelos
-              </p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
+          <div class="pagination">
+            <ul class="number-page">
+              <li id="btn-prev">
+                <button>
+                  <a href="#" (click)="yourClickEvent();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </a>
+                </button>
+              </li>
+              <div id="listPage" class="list">
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" src="https://exploringjs.com/impatient-js/img-homepage/cover-homepage.jpg"
-                  alt="Book cover with rhino">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>JavaScript for impatient programmers</h4>
-              </a>
-              <p class="book-auther">Dr. Axel Rauschmayer</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img"
-                  srcset="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1530861339i/40730394.jpg"
-                  alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>3 người thầy vĩ đại</h4>
-              </a>
-              <p class="book-auther">Robin Sharma</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="book-item hover:card">
-            <div class="book-item-img">
-              <a href="#">
-                <img class="book-img" src="https://exploringjs.com/tackling-ts/img-homepage/cover-homepage.jpg" alt="Tackling TypeScript:
-                  Upgrading from JavaScript">
-              </a>
-            </div>
-            <div class="down-content">
-              <a href="#">
-                <h4>Tackling TypeScript:
-                  Upgrading from JavaScript</h4>
-              </a>
-              <p class="book-auther">Dr. Axel Rauschmayer</p>
-              <div class="star">
-                <ul class="stars-reviews">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
+              <li id="btn-next">
+                <button href="">
+                  <a href="#" class="" (click)="$event.preventDefault()">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -517,7 +312,8 @@
 
   <script src="./assets/js/preload.js"></script>
   <script src=""></script>
-  <script src="./assets/js/books.js"></script>
+  <!-- <script src="./assets/js/books.js"></script> -->
+  <script src="./assets/js/books1.js"></script>
 </body>
 
 </html>
