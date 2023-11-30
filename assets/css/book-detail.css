@@ -801,7 +801,7 @@ header .navbar {
   margin-right: auto;
   font-family: sans-serif;
   display: grid;
-  gap: 16px;
+  gap: 24px;
   padding-bottom: 20px;
   margin-bottom: 6%;
 }

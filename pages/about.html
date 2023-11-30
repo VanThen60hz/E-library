@@ -17,6 +17,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/preload.css">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="/assets/css/fontawesome.css" />
@@ -26,13 +27,10 @@
 
   <body>
     <!-- ***** Preloader Start ***** -->
-    <!-- <div id="preloader">
-      <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div> -->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">E-LIB</p>
+    </div>
     <!-- ***** Preloader End ***** -->
 
     <!-- Header -->
@@ -496,5 +494,7 @@
         }
       }
     </script>
+
+    <script src="../assets/js/preload.js"></script>
   </body>
 </html>

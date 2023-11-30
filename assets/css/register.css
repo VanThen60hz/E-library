@@ -1,8 +1,14 @@
 .radio-buttons {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.radio-buttons input[type="radio"] {
+.button-gender {
+  display: flex;
+  
+}
+
+.button-gender .button-gender input[type="radio"] {
   margin-right: 5px;
 }
