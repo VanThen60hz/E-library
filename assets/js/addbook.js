@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get the select elements
-  var authorSelect = document.getElementById("author");
-  var publisherSelect = document.getElementById("publisher");
-  var categoriesCheckboxes = document.getElementById("categories-checkboxes");
+  let authorSelect = document.getElementById("author");
+  let publisherSelect = document.getElementById("publisher");
+  let categoriesCheckboxes = document.getElementById("categories-checkboxes");
 
   // Function to populate a select element with options
   function populateSelect(selectElement, data, defaultOptionText) {
     // Add default option
-    var defaultOption = document.createElement("option");
+    let defaultOption = document.createElement("option");
     defaultOption.text = defaultOptionText;
     selectElement.appendChild(defaultOption);
 
     // Iterate through the data and add options to the select element
     data.forEach((item) => {
-      var option = document.createElement("option");
+      let option = document.createElement("option");
       option.value = item[Object.keys(item)[0]]; // Assuming each object has only one property
       option.text = item[Object.keys(item)[0]];
       selectElement.appendChild(option);
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function populateCheckboxes(checkboxesContainer, data) {
     data.forEach((item) => {
-      var checkbox = document.createElement("input");
+      let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.name = "categories";
       checkbox.value = item.id;
       checkbox.id = "category" + item.id;
 
-      var label = document.createElement("label");
+      let label = document.createElement("label");
       label.htmlFor = "category" + item.id;
       label.appendChild(document.createTextNode(item.name));
 
@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //     publishedYear: "2022-01-01",
 //     publisherId: "Nhà  bản hội nhà văn",
 //     authorId: "Jose Mauro De",
+//     categoryIds: [1, 2],
 //   };
 
 async function addBook() {
