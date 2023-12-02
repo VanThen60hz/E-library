@@ -1,4 +1,3 @@
-
 // Pagination
 // lastPage: true
 // pageNo: 0
@@ -6,9 +5,8 @@
 // totalElements: 9
 // totalPage: 1
 
-
-var apiUrl = "http://localhost:8080/api/book";
-var productData = [];
+let apiUrl = `http://localhost:8080/api/book/search?title=${title}`;
+let productData = [];
 let itemsPerpage = 4;
 let currentPage = 1;
 let link = document.getElementsByClassName("link");
@@ -34,23 +32,23 @@ async function dataTable() {
     currentPage = 1;
   }
 
-  const btnNext = document.querySelector('#btn-next button');
-  const btnPrev = document.querySelector('#btn-prev button');
+  const btnNext = document.querySelector("#btn-next button");
+  const btnPrev = document.querySelector("#btn-prev button");
 
   if (currentPage === pageData.totalPage) {
-    btnNext.classList.add('inactive');
+    btnNext.classList.add("inactive");
   } else if (currentPage === 1) {
-    btnPrev.classList.add('inactive');
+    btnPrev.classList.add("inactive");
   }
-
-
 
   const indexOfLastPage = currentPage * itemsPerpage;
   const indexOfFirstPage = indexOfLastPage - itemsPerpage;
   const currentItems = productData.slice(indexOfFirstPage, indexOfLastPage);
 
-  document.getElementById("titleProduct").innerHTML = currentItems.map(products =>
-    `
+  document.getElementById("titleProduct").innerHTML = currentItems
+    .map(
+      (products) =>
+        `
       <div class="col-md-3">
         <div class="book-item hover:card">
           <div class="book-item-img">
@@ -74,18 +72,17 @@ async function dataTable() {
         </div>
       </div>  
     `
-  ).join("");
-
+    )
+    .join("");
 }
 dataTable();
 renderListPage();
 
 async function renderListPage() {
-  productHTML = '';
+  productHTML = "";
   const listPage = document.getElementById("listPage");
 
-  productHTML =
-    `
+  productHTML = `
     <li id="btn-prev">
       <button>
         <a href="#" (click)="yourClickEvent();">
@@ -104,39 +101,31 @@ async function renderListPage() {
         </a>
       </button>
     </li>
-  `
+  `;
 
   listPage.innerHTML = productHTML;
 }
 
 function changePage() {
-  const currentPages = document.querySelectorAll('.number-page > li > a')
+  const currentPages = document.querySelectorAll(".number-page > li > a");
   for (let i = 0; i < currentPages.length; i++) {
-    currentPages[i].addEventListener('click', () => {
+    currentPages[i].addEventListener("click", () => {
       let value = i + 1;
       currentPage = value;
-      document.querySelector('.number-page li').classList.remove('active')
+      document.querySelector(".number-page li").classList.remove("active");
       dataTable();
-    })
+    });
   }
 }
 changePage();
 
 document.querySelector("#btn-prev").addEventListener("click", () => {
   currentPage--;
-  document.querySelector('#btn-next button').classList.remove('inactive');
+  document.querySelector("#btn-next button").classList.remove("inactive");
   dataTable();
 });
 document.querySelector("#btn-next").addEventListener("click", () => {
   currentPage++;
-  document.querySelector('#btn-prev button').classList.remove('inactive');
+  document.querySelector("#btn-prev button").classList.remove("inactive");
   dataTable();
 });
-
-
-
-
-
-
-
-
