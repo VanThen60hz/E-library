@@ -38,7 +38,7 @@ let lastScrollPos = 0;
 
 const hideHeader = function () {
   const isScrollBottom = lastScrollPos < window.scrollY;
-  
+
   if (isScrollBottom) {
     header.classList.add("hide");
   } else {
@@ -57,3 +57,23 @@ window.addEventListener("scroll", function () {
     backToBtn.classList.remove("active");
   }
 });
+
+// See More & Recall
+let gradient = document.querySelector('.gradient');
+let seeMore = document.querySelector('.seeMore');
+let productDescription = document.querySelector('.description p');
+let recall = document.querySelector('.recall');
+
+document.querySelector('.seeMore').addEventListener('click', () => {
+  gradient.style = 'display: none';
+  seeMore.style = 'display: none';
+  productDescription.style = 'display: block';
+  recall.style = 'display: block'
+})
+
+document.querySelector('.recall').addEventListener('click', () => {
+  gradient.style = 'display: block';
+  seeMore.style = 'display: block';
+  productDescription.style = 'display: -webkit-box';
+  recall.style = 'display: none';
+})

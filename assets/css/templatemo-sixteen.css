@@ -885,7 +885,6 @@ header .navbar {
   color: var(--eerie-black-1);
 }
 
-.pagination ul li button.inactive,
 .pagination ul li button.inactive a {
   cursor: not-allowed;
   pointer-events: none;

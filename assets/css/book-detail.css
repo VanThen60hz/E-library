@@ -659,11 +659,11 @@ header .navbar {
   text-transform: capitalize;
 }
 
+.all-info .product-description .recall,
 .all-info .product-description .seeMore {
   color: rgb(44 104 172 / 86%) !important;
   font-weight: 700;
   font-size: 14px;
-  text-transform: capitalize;
   margin-left: 4px;
   opacity: 0.8 !important;
   cursor: pointer;
@@ -673,19 +673,24 @@ header .navbar {
   font-family: sans-serif;
 }
 
+.all-info .product-description .recall {
+  display: none;
+}
+
 .all-info .product-description .description {
   position: relative;
 }
 
 .all-info .product-description .description .gradient {
   position: absolute;
-  height: 215px;
+  height: 60px;
   width: 100%;
   bottom: 0px;
   left: 0px;
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 
+.all-info .product-description .recall:hover,
 .all-info .product-description .seeMore:hover {
   color: var(--gold-crayola-2) !important;
 }
@@ -730,6 +735,10 @@ header .navbar {
   letter-spacing: 1px;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .bill .quantity .item-quantity .plus:hover,
 .bill .quantity .item-quantity .minus:hover {
   background-color: var(--gold-crayola);
@@ -744,6 +753,7 @@ header .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .bill .quantity .item-quantity .input {
@@ -753,6 +763,7 @@ header .navbar {
   margin: 0 4px;
   text-align: center;
   height: auto;
+  cursor: auto;
 }
 
 .bill .group-button {

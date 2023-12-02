@@ -1,9 +1,6 @@
-// import { BASE_URL } from './domain';
-
 const { response } = require("express");
 
 function register() {
-  const BASE_URL = "https://mrthinkj.top";
   // Lấy dữ liệu từ các trường đầu vào
   const name = document.getElementById("name").value;
   const username = document.getElementById("username").value;
@@ -31,7 +28,7 @@ function register() {
   };
 
   // Gửi yêu cầu POST đến máy chủ BE
-  fetch(`${BASE_URL}/api/auth/register`, {
+  fetch("http://localhost:8080/api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
