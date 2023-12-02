@@ -1,3 +1,61 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the select elements
+  var authorSelect = document.getElementById("author");
+  var publisherSelect = document.getElementById("publisher");
+  var categoriesCheckboxes = document.getElementById("categories-checkboxes");
+
+  // Function to populate a select element with options
+  function populateSelect(selectElement, data, defaultOptionText) {
+    // Add default option
+    var defaultOption = document.createElement("option");
+    defaultOption.text = defaultOptionText;
+    selectElement.appendChild(defaultOption);
+
+    // Iterate through the data and add options to the select element
+    data.forEach((item) => {
+      var option = document.createElement("option");
+      option.value = item[Object.keys(item)[0]]; // Assuming each object has only one property
+      option.text = item[Object.keys(item)[0]];
+      selectElement.appendChild(option);
+    });
+  }
+
+  function populateCheckboxes(checkboxesContainer, data) {
+    data.forEach((item) => {
+      var checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.name = "categories";
+      checkbox.value = item.id;
+      checkbox.id = "category" + item.id;
+
+      var label = document.createElement("label");
+      label.htmlFor = "category" + item.id;
+      label.appendChild(document.createTextNode(item.name));
+
+      checkboxesContainer.appendChild(checkbox);
+      checkboxesContainer.appendChild(label);
+      checkboxesContainer.appendChild(document.createElement("br"));
+    });
+  }
+
+  // Fetch data for the author select
+  fetch("http://localhost:8080/api/author")
+    .then((response) => response.json())
+    .then((data) => populateSelect(authorSelect, data, "Select author"))
+    .catch((error) => console.error("Error fetching author data:", error));
+
+  // Fetch data for the publisher select
+  fetch("http://localhost:8080/api/publisher")
+    .then((response) => response.json())
+    .then((data) => populateSelect(publisherSelect, data, "Select publisher"))
+    .catch((error) => console.error("Error fetching publisher data:", error));
+
+  fetch("http://localhost:8080/api/category")
+    .then((response) => response.json())
+    .then((data) => populateCheckboxes(categoriesCheckboxes, data))
+    .catch((error) => console.error("Error fetching category data:", error));
+});
+
 //   const bookData = {
 //     title: "Example Book",
 //     description: "This is an example book description.",
@@ -21,6 +79,9 @@ async function addBook() {
     publishedYear: document.getElementById("publishingDate").value,
     publisherId: document.getElementById("publisher").value,
     authorId: document.getElementById("author").value,
+    categoryIds: Array.from(
+      document.querySelectorAll('input[name="categories"]:checked')
+    ).map((category) => category.value),
   };
 
   const apiUrl = "http://localhost:8080/api/book"; // Replace with the actual API endpoint
