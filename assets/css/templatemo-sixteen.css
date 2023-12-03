@@ -4,6 +4,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--smoky-black-3);
 }
 
 p {
@@ -306,6 +307,7 @@ nav .navbar {
 .category i {
   font-size: 35px;
   margin-right: 8px;
+  color: var(--white);
 }
 
 .section-heading a {
@@ -478,6 +480,7 @@ header .navbar {
   transition: all 0.5s;
   display: block;
   line-height: 3em;
+  outline: none;
 }
 
 .navbar-nav .btn-logout {
@@ -929,6 +932,10 @@ footer {
   justify-content: center;
 }
 
+.footer-socials p {
+  cursor: default;
+}
+
 .footer-socials p,
 .footer-items a {
   text-transform: capitalize;
@@ -941,6 +948,7 @@ footer {
 }
 
 .footer-items a:hover,
+.footer-socials .socials i:hover,
 .footer-socials .socials a:hover {
   color: var(--gold-crayola);
   transition-duration: 500ms;
@@ -949,7 +957,7 @@ footer {
 .footer-socials .socials i {
   font-size: 30px;
   margin: 10px 5px 0 0;
-
+  color: var(--white);
 }
 
 /* #Back to top */
@@ -983,7 +991,6 @@ footer {
 }
 
 /* Product Page */
-
 .books {
   margin-top: 100px;
 }

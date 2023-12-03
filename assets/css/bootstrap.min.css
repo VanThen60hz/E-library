@@ -373,6 +373,9 @@ select {
 button,
 html [type="button"] {
   -webkit-appearance: button;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 [type="button"]::-moz-focus-inner,
