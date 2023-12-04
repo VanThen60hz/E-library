@@ -144,36 +144,6 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto" style="margin: auto 0">
-            <!-- <div class="search-box">
-              <div class="search-bar">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"
-                  aria-labelledby="IconBase-title-16ad8154-a25d-484c-b7a5-af3302e957ad IconBase-description-16ad8154-a25d-484c-b7a5-af3302e957ad"
-                  role="graphics-symbol img" width="100%" height="100%" class="SearchTypeahead-icon" aria-hidden="true">
-                  <title id="IconBase-title-16ad8154-a25d-484c-b7a5-af3302e957ad">
-                    search
-                  </title>
-                  <desc id="IconBase-description-16ad8154-a25d-484c-b7a5-af3302e957ad">
-                    magnifying glass
-                  </desc>
-                  <g>
-                    <path
-                      d="M11.407,10.421,8.818,7.832a4.276,4.276,0,1,0-.985.985l2.589,2.589a.7.7,0,0,0,.985-.985ZM2.355,5.352a3,3,0,1,1,3,3,3,3,0,0,1-3-3Z">
-                    </path>
-                  </g>
-                </svg>
-                <input type="text" name="input-box" id="search-value" placeholder="Search..." />
-                <div class="search-close" onclick="searchClose()">
-                  <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="auto-box">
-                  <li>Hà Nội</li>
-                  <li>Hải Phòng</li>
-                  <li>Nghệ An</li>
-                  <li>Đà Nẵng</li>
-                  <li>Hồ Chí Minh</li>
-                </div>
-              </div>
-            </div> -->
             <div class="search-box overflow">
               <div class="search-bar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"
@@ -191,7 +161,8 @@
                     </path>
                   </g>
                 </svg>
-                <input type="text" name="input-box" id="search-value" placeholder="Search..." />
+                <input type="text" name="input-box" placeholder="Search..." value="" id="searchInput"
+                  onkeypress="handleKeyPress(event)" />
                 <div class="search-close" onclick="searchClose()">
                   <i class="fa-solid fa-xmark"></i>
                 </div>
@@ -348,6 +319,8 @@
   </script>
 
   <script src="./assets/js/preload.js"></script>
+  <script src=""></script>
+  <!-- <script src="./assets/js/books.js"></script> -->
   <script src="./assets/js/books1.js"></script>
 </body>
 

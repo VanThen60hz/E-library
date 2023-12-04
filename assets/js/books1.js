@@ -161,6 +161,7 @@ searchValue.onkeyup = (e) => {
     })
 
     searchDataArray = searchDataArray.map((data) => {
+      console.log(data)
       return data = '<li>' + data + '</li>'
     })
 
