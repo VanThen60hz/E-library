@@ -134,4 +134,68 @@ async function buttonPrevNext() {
 
 buttonPrevNext();
 dataTable();
-document.getElementById("searchButton").addEventListener("click", searchBook);
+
+// Search
+const iconSearch = document.querySelector('.SearchTypeahead-icon');
+const searchBox = document.querySelector('.search-box');
+const searchInput = document.querySelector('.search-box .search-bar input');
+const searchValue = document.getElementById('search-value');
+let autoBox = document.querySelector('.auto-box');
+
+iconSearch.addEventListener('click', () => {
+  searchBox.classList.toggle('active');
+  searchBox.classList.add('overflow');
+})
+
+searchClose = () => {
+  searchValue.value = '';
+}
+
+searchValue.onkeyup = (e) => {
+  let searchData = e.target.value;
+  let searchDataArray = [];
+
+  if (searchData) {
+    searchDataArray = recomentList.filter((data) => {
+      return data.toLocaleLowerCase().startsWith(searchData.toLocaleLowerCase());
+    })
+
+    searchDataArray = searchDataArray.map((data) => {
+      console.log(data)
+      return data = '<li>' + data + '</li>'
+    })
+
+    searchBox.classList.remove('overflow');
+    showBook(searchDataArray);
+
+  } else {
+    searchBox.classList.add('overflow');
+  }
+}
+
+function showBook(list) {
+  let listData;
+  if (list.length) {
+    listData = list.join('')
+  } else {
+    searchBox.classList.add('overflow');
+  }
+  autoBox.innerHTML = listData;
+}
+
+
+
+let recomentList = [
+  "Mùa hè không tên",
+  "Không diệt không sinh đừng sợ hãi",
+  "Cây cam ngọt của tôi",
+  "Hiểu về trái tim",
+  "3 người thầy vĩ đại",
+  "Mình sinh ra đâu phải để buồn",
+  "Tôi tự học",
+  "Hoàng tử bé",
+  "Sống thực tế giữa đời thực dụng",
+  "Nhìn lên bầu trời",
+  "Hành trình trên đường băng",
+]
+
