@@ -489,7 +489,7 @@ header .navbar {
 
 .navbar-nav .btn-logout {
   background-color: var(--gold-crayola);
-  border-radius: 60px;
+  border-radius: 10px;
   height: 38px;
   width: 90px;
   display: flex;
@@ -501,38 +501,6 @@ header .navbar {
   opacity: 0.8;
   transition-duration: 350ms;
 }
-
-/* .search-box {
-  position: relative;
-  background: var(--white);
-  border-radius: 5px;
-  margin: 2px 25px auto 0;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-box .search-bar input {
-  flex: 1;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  margin: 6px 0 auto 6px;
-  font-size: 15px;
-}
-
-.search-box .search-bar .SearchTypeahead-icon {
-  height: 20px;
-  width: 20px;
-  margin-left: 10px;
-  fill: #959595;
-}
-
-::placeholder {
-  color: #959595;
-} */
 
 .search-box {
   position: relative;
@@ -561,7 +529,7 @@ header .navbar {
   background: transparent;
   border: 0;
   outline: 0;
-  margin: 1px 0 1px 36px;
+  margin: 1px 0 1px 38px;
   font-size: 16px;
   padding-top: 9px;
   text-decoration: none;
@@ -581,6 +549,10 @@ input:invalid {
 
 .search-box .search-bar .auto-box li {
   padding-top: 2px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   padding-left: 18px;
 }
 

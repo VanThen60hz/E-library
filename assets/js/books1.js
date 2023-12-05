@@ -11,9 +11,13 @@ let productId = 0;
 let bookId = 0;
 let productList = "";
 
+let btnNext = document.querySelector("#btn-next button");
+let btnPrev = document.querySelector("#btn-prev button");
+
 async function handleKeyPress(event) {
   // Check if the pressed key is Enter (key code 13)
   if (event.keyCode === 13) {
+    console.log(event.keyCode);
     searchBook();
   }
 }
@@ -44,9 +48,6 @@ async function dataTable() {
     pageNo = 0;
   }
 
-  const btnNext = document.querySelector("#btn-next button");
-  const btnPrev = document.querySelector("#btn-prev button");
-
   if (btnNext && btnPrev) {
     if (pageNo === totalPage - 1) {
       btnNext.classList.add("inactive");
@@ -65,7 +66,7 @@ async function dataTable() {
           <div class="book-item-img">
             <a href="./pages/book-detail.html?bookId=${products.id}">
               <img class="book-img" srcset="${products.image}"
-                alt="Cây Cam Ngọt Của Tôi" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
+                alt="${products.title}" loading="eager" class="styles__StyledImg-sc-p9s3t3-0 hbqSye loaded">
             </a>
           </div>
           <div class="down-content">
@@ -111,6 +112,20 @@ async function renderListPage() {
   pageButtons.forEach((button) => {
     button.addEventListener("click", () => {
       pageNo = button.innerHTML - 1;
+
+      if (pageNo == totalPage - 1) {
+        console.log('finish!L')
+        btnPrev.classList.add("active");
+        btnPrev.classList.remove("inactive");
+      } else if (pageNo == 0) {
+        btnNext.classList.add("active");
+        btnNext.classList.remove("inactive");
+      } else {
+        btnNext.classList.add("active");
+        btnPrev.classList.add("active");
+        btnPrev.classList.remove("inactive");
+        btnNext.classList.remove("inactive");
+      }
       dataTable();
     });
   });
@@ -118,16 +133,16 @@ async function renderListPage() {
 
 async function buttonPrevNext() {
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#btn-prev").addEventListener("click", () => {
+    btnPrev.addEventListener("click", () => {
       pageNo -= 1;
       dataTable();
-      document.querySelector("#btn-next button").classList.remove("inactive");
+      btnNext.classList.remove("inactive");
     });
 
-    document.querySelector("#btn-next").addEventListener("click", () => {
+    btnNext.addEventListener("click", () => {
       pageNo += 1;
       dataTable();
-      document.querySelector("#btn-prev button").classList.remove("inactive");
+      btnPrev.classList.remove("inactive");
     });
   });
 }
@@ -135,11 +150,12 @@ async function buttonPrevNext() {
 buttonPrevNext();
 dataTable();
 
+
 // Search
 const iconSearch = document.querySelector('.SearchTypeahead-icon');
 const searchBox = document.querySelector('.search-box');
 const searchInput = document.querySelector('.search-box .search-bar input');
-const searchValue = document.getElementById('search-value');
+const searchValue = document.getElementById('searchInput');
 let autoBox = document.querySelector('.auto-box');
 
 iconSearch.addEventListener('click', () => {
@@ -147,26 +163,38 @@ iconSearch.addEventListener('click', () => {
   searchBox.classList.add('overflow');
 })
 
-searchClose = () => {
+async function searchClose() {
   searchValue.value = '';
+  searchBox.classList.add('overflow');
+
+  window.location.href = 'index.html';
 }
 
 searchValue.onkeyup = (e) => {
   let searchData = e.target.value;
   let searchDataArray = [];
-
+  console.log(searchData)
   if (searchData) {
     searchDataArray = recomentList.filter((data) => {
       return data.toLocaleLowerCase().startsWith(searchData.toLocaleLowerCase());
     })
 
     searchDataArray = searchDataArray.map((data) => {
-      console.log(data)
       return data = '<li>' + data + '</li>'
     })
 
     searchBox.classList.remove('overflow');
     showBook(searchDataArray);
+
+    let liItemSearch = document.querySelectorAll("li");
+    for (let i = 0; i < liItemSearch.length; i++) {
+      liItemSearch[i].addEventListener('click', () => {
+        searchValue.value = liItemSearch[i].innerHTML;
+        searchBox.classList.add('overflow');
+        searchBook();
+      })
+    }
+
 
   } else {
     searchBox.classList.add('overflow');
