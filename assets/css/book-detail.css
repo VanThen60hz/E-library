@@ -965,6 +965,7 @@ footer {
 }
 
 .footer-items a:hover,
+.footer-socials .socials i:hover,
 .footer-socials .socials a:hover {
   color: var(--gold-crayola);
   transition-duration: 500ms;
@@ -973,7 +974,7 @@ footer {
 .footer-socials .socials i {
   font-size: 30px;
   margin: 10px 5px 0 0;
-
+  color: var(--white);
 }
 
 /* #Back to top */
