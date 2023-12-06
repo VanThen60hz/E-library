@@ -146,8 +146,8 @@ button:focus {
 
 .navbar-nav .btn-logout {
   background-color: var(--gold-crayola);
-  border-radius: 60px;
-  height: 35px;
+  border-radius: 10px;
+  height: 38px;
   width: 90px;
   display: flex;
   align-items: center;
@@ -847,6 +847,64 @@ footer {
 .footer-socials .socials a i {
   font-size: 30px;
   color: var(--white);
+}
+
+/* back again */
+.previous-page i {
+  color: var(--gold-crayola);
+  position: absolute;
+  font-size: 37px;
+  margin-top: -64px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.previous-page i:hover {
+  opacity: 0.8;
+  transition: 0.6s;
+}
+
+/* Notify */
+.container .added-to-data-success,
+.container .added-to-data-not-success {
+  position: absolute;
+  background-color: var(--white);
+  right: -300px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 69px;
+  width: 260px;
+}
+
+.container .added-to-data-success.active,
+.container .added-to-data-not-success.active {
+  right: 12px;
+  transition: .4s linear;
+}
+
+
+.container .added-to-data-not-success i {
+  color: #ed4a4a;
+}
+
+.container .added-to-data-success i {
+  color: var(--gold-crayola-2);
+}
+
+.container .added-to-data-success i,
+.container .added-to-data-not-success i {
+  font-size: 34px;
+  margin: 10px 0 10px 10px;
+}
+
+
+.container .added-to-data-success .notify,
+.container .added-to-data-not-success .notify {
+  font-size: 19px;
+  margin: 10px;
+  color: var(--dark);
 }
 
 /* #Back to top */

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let authorSelect = document.getElementById("author");
   let publisherSelect = document.getElementById("publisher");
   let categoriesCheckboxes = document.getElementById("categories-checkboxes");
+  const addBookButton = document.getElementById("addBookButton");
 
   // Function to populate a select element with options
   function populateSelect(selectElement, data, defaultOptionText) {
@@ -102,11 +103,48 @@ async function addBook() {
       throw new Error("Error adding the book.");
     }
 
-    console.log("Book added successfully!");
+    let addSuccess = document.querySelector('.added-to-data-success');
+    let addedMessageTimeoutId = false;
+
+    addSuccess.classList.add('active');
+
+    if (addedMessageTimeoutId) {
+      clearTimeout(addedMessageTimeoutId);
+    }
+
+    const timeoutId = setTimeout(() => {
+      addSuccess.classList.remove('active');
+    }, 2000);
+
+    addedMessageTimeoutId = timeoutId;
+
+    // console.log("Book added successfully!");
     // Add any additional processing here if needed
   } catch (error) {
-    console.error(error.message);
+    let addedMessageTimeoutId = false;
+
+    let addNotSuccess = document.querySelector('.added-to-data-not-success');
+
+    addNotSuccess.classList.add('active');
+
+    if (addedMessageTimeoutId) {
+      clearTimeout(addedMessageTimeoutId);
+    }
+
+    const timeoutId = setTimeout(() => {
+      addNotSuccess.classList.remove('active');
+    }, 2000);
+
+    addedMessageTimeoutId = timeoutId;
   }
 }
 
-document.getElementById("addBookButton").addEventListener("click", addBook);
+addBookButton.addEventListener("click", addBook);
+
+
+// back again
+const previousPage = document.querySelector('.previous-page');
+
+previousPage.addEventListener('click', () => {
+  window.location.href = 'books.html';
+})
