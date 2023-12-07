@@ -23,19 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function populateCheckboxes(checkboxesContainer, data) {
     data.forEach((item) => {
+      let checkboxDiv = document.createElement("div");
+      checkboxDiv.classList.add("form-check", "form-check-inline");
+
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.name = "categories";
       checkbox.value = item.id;
       checkbox.id = "category" + item.id;
+      checkbox.classList.add("form-check-input");
 
       let label = document.createElement("label");
+      label.classList.add("form-check-label");
       label.htmlFor = "category" + item.id;
       label.appendChild(document.createTextNode(item.name));
 
-      checkboxesContainer.appendChild(checkbox);
-      checkboxesContainer.appendChild(label);
-      checkboxesContainer.appendChild(document.createElement("br"));
+      checkboxDiv.appendChild(checkbox);
+      checkboxDiv.appendChild(label);
+      checkboxesContainer.appendChild(checkboxDiv);
     });
   }
 
@@ -70,81 +75,146 @@ document.addEventListener("DOMContentLoaded", function () {
 //     categoryIds: [1, 2],
 //   };
 
+// Function to upload image to Cloudinary
+async function uploadCloudinary() {
+  return new Promise(async (resolve, reject) => {
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput.files[0];
+
+    if (!file) {
+      console.error("No file selected");
+      reject(new Error("No file selected"));
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const authToken = localStorage.getItem("accessToken");
+
+    const headers = {
+      Authorization: `Bearer ${authToken}`,
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost:8080/api/test/cloudinary",
+        {
+          method: "POST",
+          body: formData,
+          headers: headers,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        const data = await response.json();
+        resolve(data.url);
+      } else {
+        const data = await response.text();
+        resolve(data);
+      }
+
+      // Optionally, you can reset the file input
+      fileInput.value = ""; // Clear the selected file
+    } catch (error) {
+      // Handle errors
+      console.error("Error uploading image:", error);
+      reject(error);
+    }
+  });
+}
+
+// Function to add a book
 async function addBook() {
-  const bookData = {
-    title: document.getElementById("title").value,
-    description: document.getElementById("description").value,
-    quantity: document.getElementById("quantity").value,
-    price: document.getElementById("price").value,
-    image: "bookImageUrl",
-    // category: document.getElementById("category").value,
-    publishedYear: document.getElementById("publishingDate").value,
-    publisherId: document.getElementById("publisher").value,
-    authorId: document.getElementById("author").value,
-    categoryIds: Array.from(
-      document.querySelectorAll('input[name="categories"]:checked')
-    ).map((category) => category.value),
-  };
-
-  const apiUrl = "http://localhost:8080/api/book"; // Replace with the actual API endpoint
-  const authToken = localStorage.getItem("accessToken");
-
   try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${authToken}`, // Include this line if using token-based authentication
-      },
-      body: JSON.stringify(bookData),
-    });
+    // Upload the image to Cloudinary and get the URL
+    const imageUrl = await uploadCloudinary();
+    console.log(imageUrl);
 
-    if (!response.ok) {
-      throw new Error("Error adding the book.");
+    if (!imageUrl) {
+      console.error("Image upload failed");
+      return;
     }
+    console.log(imageUrl);
 
-    let addSuccess = document.querySelector('.added-to-data-success');
-    let addedMessageTimeoutId = false;
+    const bookData = {
+      title: document.getElementById("title").value,
+      description: document.getElementById("description").value,
+      quantity: document.getElementById("quantity").value,
+      price: document.getElementById("price").value,
+      image: imageUrl,
+      // category: document.getElementById("category").value,
+      publishedYear: document.getElementById("publishingDate").value,
+      publisherId: document.getElementById("publisher").value,
+      authorId: document.getElementById("author").value,
+      categoryIds: Array.from(
+        document.querySelectorAll('input[name="categories"]:checked')
+      ).map((category) => category.value),
+    };
 
-    addSuccess.classList.add('active');
+    const apiUrl = "http://localhost:8080/api/book"; // Replace with the actual API endpoint
+    const authToken = localStorage.getItem("accessToken");
 
-    if (addedMessageTimeoutId) {
-      clearTimeout(addedMessageTimeoutId);
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`, // Include this line if using token-based authentication
+        },
+        body: JSON.stringify(bookData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error adding the book.");
+      }
+
+      console.log("Book added successfully!");
+      // Add any additional processing here if needed
+    } catch (error) {
+      console.error(error.message);
     }
-
-    const timeoutId = setTimeout(() => {
-      addSuccess.classList.remove('active');
-    }, 2000);
-
-    addedMessageTimeoutId = timeoutId;
-
-    // console.log("Book added successfully!");
-    // Add any additional processing here if needed
   } catch (error) {
-    let addedMessageTimeoutId = false;
-
-    let addNotSuccess = document.querySelector('.added-to-data-not-success');
-
-    addNotSuccess.classList.add('active');
-
-    if (addedMessageTimeoutId) {
-      clearTimeout(addedMessageTimeoutId);
-    }
-
-    const timeoutId = setTimeout(() => {
-      addNotSuccess.classList.remove('active');
-    }, 2000);
-
-    addedMessageTimeoutId = timeoutId;
+    console.error("Error adding book:", error);
+    // Handle errors, display an error message, etc.
   }
 }
 
 addBookButton.addEventListener("click", addBook);
 
-
 // back again
-const previousPage = document.querySelector('.previous-page');
+const previousPage = document.querySelector(".previous-page");
 
-previousPage.addEventListener('click', () => {
-  window.location.href = 'books.html';
-})
+previousPage.addEventListener("click", () => {
+  window.location.href = "books.html";
+});
+
+function displaySelectedFile(input) {
+  let fileInput = input;
+  let displayDummy = document.querySelector(".tm-book-img-dummy");
+  let displayDummyIcon = document.querySelector(".tm-book-img-dummy i");
+
+  if (fileInput.files && fileInput.files[0]) {
+    let reader = new FileReader();
+    displayDummyIcon.style.display = "none";
+
+    reader.onload = function (e) {
+      // Ensure that the element is visible
+      displayDummy.style.display = "block";
+      displayDummy.style.backgroundImage = "url(" + e.target.result + ")";
+      displayDummy.style.backgroundSize = "cover";
+    };
+
+    reader.onerror = function (e) {
+      console.error("Error reading the file:", e);
+    };
+
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+}
